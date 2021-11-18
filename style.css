@@ -70,6 +70,7 @@ a {
 
   .status {
     font-size: 32px !important;
+    margin-right: 0 !important;
   }
 
   .bottom {
