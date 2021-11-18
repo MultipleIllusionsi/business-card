@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -16,7 +17,30 @@ a {
   color: #f2f2f2;
 }
 
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(600px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.5) translateY(400px);
+  }
+
+  45% {
+    transform: scale(1.5) translateY(400px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+/* 
+<!-- можно сделать фишку и на адаптиве, что при повороте оно работает, также скругления оставить, все дела --> */
+
 .box {
+  animation: cardAppear 2.4s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,9 +52,6 @@ a {
   width: 60vw;
   background: linear-gradient(135deg, #4568dc, #b06ab3);
   border-radius: 20px;
-  box-shadow: 0px -1.664729118347168px 48.80687713623047px 0px #0000000a;
-  box-shadow: 0px 0.30331215262413025px 92.20519256591797px 0px #0000000e;
-  box-shadow: 0px 15.999998092651367px 347.99993896484375px 0px #00000017;
   text-transform: uppercase;
 }
 
@@ -58,6 +79,7 @@ a {
     border-radius: 0;
     justify-content: start;
     text-align: center !important;
+    animation: none;
   }
 
   .name {
